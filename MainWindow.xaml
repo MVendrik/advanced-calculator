@@ -1,0 +1,58 @@
+﻿<Window x:Class="CalculatorSolution.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorSolution"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="20"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="MinWidth" Value="100"></Setter>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="20,0,20,0"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="MinWidth" Value="100"></Setter>
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="20,0,20,0"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="FontWeight" Value= "DemiBold"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Label Name="lblEersteGetal" Content="Eerste Getal" HorizontalAlignment="Left"/>
+            <TextBox Name="tbxEersteGetal" Text="" Margin="20, 0, 20, 30" HorizontalAlignment="Left"/>
+            <Label Name ="lblTweedeGetal" Content="Tweede Getal" HorizontalAlignment="Left"/>
+            <TextBox Name ="tbxTweedeGetal" Text="" HorizontalAlignment="Left" Margin="20,0,20,30"/>
+            <Button x:Name="btnBereken" Content="Bereken!" HorizontalAlignment="Left" Click="btnBereken_Click"/>
+            <Label Name="lblAntwoord" Content="" HorizontalAlignment="Left"/>
+            <RadioButton Name="btnOptellen" Content="Optellen" HorizontalAlignment="Left" Margin="20, 20 ,0, 10"/>
+            <RadioButton Name="btnAftrekken" Content="Aftrekken" HorizontalAlignment="Left" Margin="20,0,0,10"/>
+            <RadioButton Name="btnVermenigvuldigen" Content="Vermenigvuldigen" HorizontalAlignment="Left" Margin="20, 0, 0, 10"/>
+            <RadioButton Name="btnDelen" Content="Delen" HorizontalAlignment="Left" Margin="20, 0, 0, 10"/>
+            <Label Name="lblVrijeInvier" Content="Vrije Invoer" HorizontalAlignment="Left" Margin="20, 20, 0, 10"/>
+            <TextBox Name="tbxVrijeInvoer" Text="" HorizontalAlignment="Left" Margin="20, 0, 0, 10"/>
+
+
+
+        </StackPanel>
+        <ListBox Name="lbxBerekeningen" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Name="btnHistorieWissen" Content="Historie Wissen" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Width="100" Height="20" Click="btnHistorieWissen_Click"/>
+
+
+    </Grid>
+</Window>
